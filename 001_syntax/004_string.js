@@ -4,7 +4,11 @@
  */
 
 function length(str) {
+  let str = "Yusuke is awesome.";
+  console.log(`${str.length}`);
 }
+console.log(length(str));
+
 
 /**
  *  4.2 文字列のながさが偶数の場合にtrueを返却するメソッドを実装してください
@@ -12,6 +16,7 @@ function length(str) {
  */
 
 function lengthIsEven(str) {
+
 }
 
 /**
