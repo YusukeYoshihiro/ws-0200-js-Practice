@@ -4,11 +4,8 @@
  */
 
 function length(str) {
-  let str = "Yusuke is awesome.";
-  console.log(`${str.length}`);
+  return str.length;
 }
-console.log(length(str));
-
 
 /**
  *  4.2 文字列のながさが偶数の場合にtrueを返却するメソッドを実装してください
@@ -16,40 +13,34 @@ console.log(length(str));
  */
 
 function lengthIsEven(str) {
-  let str = "YusukeYoshihiro";
-  let i = str.length;
-  if((i %2 )= 0){
+  let x = str.length;
+  if ((x % 2) == 0) {
     return true;
+  } else {
+    return false;
   }
-  console.log(i);
 }
-console.log(lengthIsEven(str));
 
 /**
  *  4.3 文字列の先頭一文字目を返却するメソッドを実装してください
  *
  */
+// The substring() method returns the part of the string between the start and end indexes, or to the end of the string.
 
 function firstChar(str) {
-  let str = "Hello World!";
-  let word = str.charAt(0);
-  console.log(word);
-} 
-console.log(firstChar(str));
+  return str.substring(0, 1);
+}
 
 /**
  *  4.4 文字列の末尾一文字目を返却するメソッドを実装してください
  *
  */
 
+// The slice() method extracts a section of a string and returns it as a new string, without modifying the original string.
+
 function lastChar(str) {
-  let str = "Hello World!";
-  let word = str.slice(-1);
-  console.log(word);
-} 
-console.log(firstChar(str));
-
-
+  return str.slice(-1);
+}
 
 
 /**
@@ -58,17 +49,9 @@ console.log(firstChar(str));
  *
  */
 
-// The substr() method returns a portion of the string, starting at the specified index and extending for a given number of characters afterwards.
-
-
-
 function substring(str, a, b) {
-    let str = "";
-    let subStr = str.substr(a,b);
-    console.log(subStr);
+  return str.substring(-1, b);
 }
-console.log( substring("Yusuke", 1, 2));
-
 
 /**
  *  4.6 引数に与えられた二つの引数のうち、一つ目の引数の文字列に二つ目の引数の文字列が
@@ -82,13 +65,15 @@ console.log( substring("Yusuke", 1, 2));
  * */
 
 function isInclude(a, b) {
-  let a = "Jiro-San is Awesome";
-  let b = "Jiro";
-  let isInclude = a.includes(b);
-  return isInclude(isInclude);
+  let x;
+  if (x = a.includes(b) || b === 0) {
+    return true;
+  } else if (x = b.includes(a)) {
+    return false;
+  } else {
+    return false;
+  } 
 }
-console.log(isInclude(a, b));
-
 
 /**
  *  4.7 引数で渡された文字列を一文字ずつ表示するメソッドを実装してください
@@ -102,7 +87,8 @@ console.log(isInclude(a, b));
  */
 
 function printByChar(str) {
-
+   let i = str;
+   
 }
 
 

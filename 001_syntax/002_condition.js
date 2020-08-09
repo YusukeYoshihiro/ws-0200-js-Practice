@@ -48,26 +48,26 @@ console.log(greeding(12));
  */
 
 function getDay(day) {
-  switch (new Date().getDay()) {
+  switch (day) {
     case 0:
-      return "Sunday";
+      console.log( "Sunday");
     case 1:
-      return "Monday";
+      console.log( "Monday");
     case 2:
-      return "Tuesday";
+      console.log( "Tuesday");
     case 3:
-      return "Wednesday";
+      console.log( "Wednesday");
     case 4:
-      return "Thursday";
+      console.log( "Thursday");
     case 5:
-      return "Friday";
+      console.log( "Friday");
     case 6:
-      return "Saturday";
+      console.log( "Saturday");
     default:
       break;
   }
 }
-console.log(getDay(0))
+// console.log(getDay(0))
 
 module.exports = {
   printMessageByAge,
