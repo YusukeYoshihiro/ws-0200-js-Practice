@@ -1,19 +1,23 @@
 /**
  *  1.1 Hello Worldという文字を出力するメソッドを定義してください
  *
- */
+ */ 
+// 出力する・表示するといったものはconsole.log
 function helloWorld() {
-  return `Hello World`;
+  console.log("Hello World"); 
 }
 helloWorld();
+
+
 
 /**
  *  1.2 const を使って"hoge"という文字列を定義した変数を定義し、それを出力する関数を定義してください
  *
  */
+// 出力する・表示するといったものはconsole.log
 function displayConst() {
-  const str1 = "hoge";
-  return str1;
+  const str1 =  "hoge";
+  console.log(str1);
 }
 displayConst();
 
@@ -21,9 +25,10 @@ displayConst();
  *  1.3 let を使って"hoge"という文字列を定義した変数を定義し、それを出力する関数を定義してください
  *
  */
+// 出力する・表示するといったものはconsole.log
 function displayLet() {
   let str2 = "hoge";
-  return str2;
+  console.log(str2);
 }
 displayConst();
 
@@ -32,7 +37,8 @@ displayConst();
  *
  */
 function displayArgument(arg) {
-   return `${arg}`
+  let x = `${arg}`;
+  console.log(x);
 }
 displayArgument("Yusuke");
 
@@ -40,6 +46,7 @@ displayArgument("Yusuke");
  *  1.5 渡された二つの引数の合計を返却するメソッドを実装してください
  *
  */
+// 返却する・返すといった指定のあるものはreturn
 function sumTwoArgs(a, b) {
   return a + b ;
 }
@@ -67,17 +74,26 @@ console.log(sumTwoArgs2(3,2));
  *
  */
 function quotientTwoArgs(a,b) {
-  var quotient = a / b ;
-  return quotient;
+  //  Math.floor(x) => 引数として与えた数以下の最大の整数を返します。
+  var quotient = Math.floor( a / b );
+  if(a === 0 || b === 0) {
+    return null;
+  }else{
+    return quotient;
+  }
 }
-console.log(quotientTwoArgs(100,2));
+// console.log(quotientTwoArgs(100,2));
 
 // Aroow ver.
 quotientTwoArgs2 = (a,b) => {
-  let quotient2 = a / b;
-  return quotient2;
+  let quotient2 = Math.floor(a / b);
+  if( a == 0 || b == 0 ){
+    return null;
+  }else{
+    return quotient2;
+  }
 }
-console.log(quotientTwoArgs2(100,2));
+// console.log(quotientTwoArgs2(100,2));
 
 
 /**
@@ -85,7 +101,7 @@ console.log(quotientTwoArgs2(100,2));
  *
  */
 function productTwoArgs(a, b) {
-    var product = a * b;
+    let product = a * b;
     return product; 
 }
 console.log(productTwoArgs(5,3));
@@ -106,8 +122,13 @@ console.log(remainderTwoArgs(1));
  *
  */
 function isEven(a) {
-  var multiples = a % 2;
-  return multiples = 0;
+  let multiples = a % 2;
+  let x = multiples;
+  if (x == 0){
+     return true;
+  } else {
+    return false;
+  }
 }
 console.log(isEven(10))
 
@@ -115,10 +136,11 @@ console.log(isEven(10))
  *  1.11 渡された二つの文字列を連結するメソッドを実装してください
  *
  */
-function concatString(a, b) {
-  return `My name is ${a} + " " + ${b}`;
+function concatString(a,b) {
+ return a.concat(b);
 }
-concatString("Yusuke", "Yoshihiro")
+console.log(concatString("yusuke","Yoshihiro"));
+
 
 module.exports = {
   helloWorld,

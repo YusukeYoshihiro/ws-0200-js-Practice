@@ -7,9 +7,9 @@
  */
 function printMessageByAge(age) {
   if (age >= 20) {
-    console.log(`You are already adult.`)
+    console.log("成年です。")
   } else {
-    console.log(`You are still a child.`)
+    console.log("未成年です。")
   }
   // age >= 20 ? console.log(`You are already adult.`) : console.log(`You are still a child.`)
 }
@@ -25,13 +25,11 @@ console.log(printMessageByAge(21));
  */
 function greeding(hour) {
   if (hour >= 4 && hour < 12) {
-    alert(`Good Morning !`);
+    console.log("Good Morning");
   } else if (hour >= 12 && hour < 17) {
-    alert(`Hello`);
-  } else if (hour >= 17) {
-    alert(`Good Night`);
+    console.log("Hello");
   } else {
-    alert(`Good Night`);
+    console.log("Good Night");
   }
 }
 console.log(greeding(12));
