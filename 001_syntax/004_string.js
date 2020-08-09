@@ -87,8 +87,9 @@ function isInclude(a, b) {
  */
 
 function printByChar(str) {
-   let i = str;
-   
+  for(let i =0; i <= str.length -1; i++){
+    console.log(str.charAt(i));
+  }
 }
 
 
