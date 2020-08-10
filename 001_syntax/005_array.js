@@ -4,7 +4,9 @@
  */
 
 function printArray(array) {
-  
+  for (let i = 0; i <= array.length - 1; i++) {
+    console.log(array[i]);
+  }
 }
 
 /**
@@ -23,7 +25,17 @@ function printArray(array) {
  *
  */
 function getDays() {
+  let x = [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"];
+  return x;
 }
+
 
 /**
  *  5.3 配列に特定の数があった場合にtrue、そうでない場合にfalseを返す関数を実装してください
@@ -36,7 +48,13 @@ function getDays() {
  */
 
 function findNum(array, num) {
+  if (array.includes(num)) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
 
 /**
  *  5.4 配列に重複した要素があれば、true、そうでなければfalseを返す関数を実装してください
@@ -49,7 +67,15 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
+  let x = array
+  for (let i = 0; i < x.length; i++) {
+    if (x[i]) {
+      return true;
+    } x[i] = true;
+  }
+  return false;
 }
+
 
 module.exports = {
   printArray,

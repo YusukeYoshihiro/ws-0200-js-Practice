@@ -8,6 +8,12 @@
  */
 
 function getPersonObject() {
+    let x = {
+      name: 'Bob',
+      age: 32,
+      gender: 'male'
+    }
+    return x;
 }
 
 /**
@@ -25,7 +31,20 @@ function getPersonObject() {
  */
 
 function mutateObject(person) {
+  let A = {
+    name : "Bob",
+    age : 32,
+    gender : 'male'
+  }
+  let B = person;
+  if(A = B){
+    B.name = 'Mary';
+    B.age = 37;
+    B.gender = 'female';
+  }
+  return B;
 }
+
 
 /**
  *  6.3 下記引数で渡される配列にランダムな1 ~10の数字を割り振り、オブジェクトとして返す
@@ -56,6 +75,7 @@ function assignNumber(persons) {
   }
   return obj;
 }
+// console.log(assignNumber(['Yusuke', 'Desmond','Angela','Joy']));
 
 /**
  *  6.4 配列に重複した要素があれば、true、そうでなければfalseを返す関数を実装してください
@@ -68,7 +88,7 @@ function assignNumber(persons) {
  *
  */
 
-function isDuplicate(array) {
+function isDuplicate(){
   numMap = {};
   for (let i = 0; i < array.length; i++) {
     if (numMap[array[i]]) {
