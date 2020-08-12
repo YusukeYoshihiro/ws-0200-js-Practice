@@ -11,7 +11,14 @@
  *
  */
 
+// You can loop over the string, testing to see whether there is a non-undefined value at each index (as soon as you get an undefined value you've run past the end of the string):
+
 function length(str) {
+  var length = 0;
+  while(str[length] !== undefined){
+    length++;
+  }
+  return length
 }
 
 /**

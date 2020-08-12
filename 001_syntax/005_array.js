@@ -66,15 +66,20 @@ function findNum(array, num) {
  *
  */
 
+let array = [1,3,4,4]; 
 function isDuplicate(array) {
-  let x = array
-  for (let i = 0; i < x.length; i++) {
-    if (x[i]) {
-      return true;
-    } x[i] = true;
+  let isDuplicate = false;
+  for(let i = 0; i <= array.length-1; i++){
+    for(let j = i+1; j<=array.length-1; j++){
+      if(array[i] === array[j]){
+        return isDuplicate = true;
+      }
+    }
   }
-  return false;
+  return isDuplicate;
 }
+isDuplicate(array);
+
 
 
 module.exports = {
