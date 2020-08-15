@@ -88,17 +88,25 @@ function assignNumber(persons) {
  *
  */
 
-function isDuplicate(){
-  numMap = {};
-  for (let i = 0; i < array.length; i++) {
-    if (numMap[array[i]]) {
-      return true;
+function isDuplicate(array){
+  let toObject = {};
+  let isDuplicate = false;
+    for (let i = 0; i <= array.length -1; i++) {
+      for (let j = i+1; j <= array.length -1; j++){
+        array[i] == toObject[i] && array[j] == toObject[j];
+        if ( toObject[i] === toObject[j]){
+          return isDuplicate = true;
+      }
     }
-    numMap[array[i]] = true;
   }
-  return false;
+  return isDuplicate;
 }
 
+
+
+
+
+  
 module.exports = {
   getPersonObject,
   mutateObject,

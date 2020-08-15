@@ -64,7 +64,18 @@ describe('average', () => {
     expect(average([])).toEqual(0);
   });
 });
-
+describe('concat', () => {
+  let outputs = []
+  beforeEach(() => {
+    outputs = []
+    console.log = logMock(outputs)
+  });
+  test('normal', () => {
+    expect(concat([1, 3, 7, 9], [3, 4])).toEqual([1, 3, 7, 9, 3, 4]);
+    expect(concat(['h', 'o', 'm', 'e'], ['w', 'o', 'r', 'k'])).toEqual(['h', 'o', 'm', 'e', 'w', 'o', 'r', 'k']);
+    expect(concat([], [])).toEqual([]);
+  });
+});
 describe('size', () => {
   test('normal', () => {
     expect(size([1, 2, 3])).toEqual(3);

@@ -10,7 +10,12 @@
  *    30 => 55
  */
 
-function sumSequence (n, sum = 0) {
+function sumSequence(n, sum = 0) {
+  if(n===0){
+    return 0;
+  }else {
+    return n+sumSequence(n-1);
+  }
 }
 
 /**
@@ -24,6 +29,12 @@ function sumSequence (n, sum = 0) {
  */
 
 function fibonacci (num, index = 0, array = []) {
+  array[index] = 1;
+  array[index + 1] = array[index];
+  for(let i = 2; i < num; i++){
+    array[i] =  array[i-1] + array[i-2];
+  }
+  return array;
 }
 
 

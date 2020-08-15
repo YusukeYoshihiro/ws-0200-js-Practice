@@ -9,6 +9,12 @@ function printArray(array) {
   }
 }
 
+// function printArray(array) {
+//     console.log(array);
+// }
+
+
+
 /**
  *  5.2 関数内で全ての曜日を配列として宣言して返却するメソッドを実装してください
  *
@@ -66,7 +72,7 @@ function findNum(array, num) {
  *
  */
 
-let array = [1,3,4,4]; 
+// let array = [1,3,4,4]; 
 function isDuplicate(array) {
   let isDuplicate = false;
   for(let i = 0; i <= array.length-1; i++){
@@ -78,7 +84,7 @@ function isDuplicate(array) {
   }
   return isDuplicate;
 }
-isDuplicate(array);
+// isDuplicate(array);
 
 
 

@@ -15,13 +15,13 @@
 
 function length(str) {
   var length = 0;
-  while(str[length] !== undefined){
+  while (str[length] !== undefined) {
     length++;
   }
   return length
 }
 
-/**
+/**clear
  *  文字列の反転
  *
  *  文字列を反転させる関数を実装してください
@@ -33,7 +33,14 @@ function length(str) {
  *
  */
 function reverse(str) {
+  return str.split("").reverse().join("");
 }
+console.log(reverse("hello"));
+// split()で文字列を分割//["h", "e", "l", "l", "o"]
+// reverse()で逆に並べる。//["o", "l", "l", "e", "h"]
+// join("")で一緒にする。//olleh
+
+
 
 /**
  *  指定された文字列の位置を返却
@@ -48,7 +55,9 @@ function reverse(str) {
  */
 
 function findIndex(str, char) {
+  return str.indexOf(char);
 }
+
 
 /**
  *  指定された文字列を指定された文字で分割
@@ -63,6 +72,7 @@ function findIndex(str, char) {
  */
 
 function split(a, b) {
+  return a.split(b);
 }
 
 /**
@@ -78,23 +88,38 @@ function split(a, b) {
  */
 
 function sum(array) {
+  let sum = 0;
+  for (let i = 0; i < array.length; i++) {
+    sum = sum + array[i];
+  }
+  return sum;
 }
+
 
 /**
  *  配列の平均
  *
- *  渡された配列の合計を整数(小数切り捨て)で返す関数を実装してください。
+ *  渡された配列の平均を整数(小数切り捨て)で返す関数を実装してください。
  *
  *  example:
  *    [1, 3, 7, 9] => output: 5
  *    [2, 5, 3] => output: 3
  *    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] => output: 5
  *    [1] => output: 1
- *    [] => output: 1
+ *    [] => output: 0
  *
  */
 
 function average(array) {
+  let sum = 0;
+  if (array == "") {
+    return 0;
+  } else {
+    for (let i = 0; i < array.length; i++) {
+      sum = sum + array[i];
+    }
+  }
+  return Math.floor(sum / array.length);
 }
 
 /**
@@ -110,6 +135,7 @@ function average(array) {
  */
 
 function concat(a, b) {
+  return a.concat(b);
 }
 
 /**
@@ -125,6 +151,7 @@ function concat(a, b) {
  */
 
 function size(array) {
+  return array.length;
 }
 
 /**
@@ -133,7 +160,7 @@ function size(array) {
  *  配列の最大値と最小値を出力する関数を実装してください。
  *
  *  example:
- *    [1, 3, 7, 9] => max: 20, min: 1
+ *    [1, 3, 7, 9] => max: 9, min: 1
  *    [2, 5, 3, 6, 10, -1] => max: 10, min: -1
  *    [1] => max: 1, min: 1
  *    [] => 表示しない
@@ -141,6 +168,23 @@ function size(array) {
  */
 
 function minMax(array) {
+  let maxNum = array[0];
+  let minNum = array[0];
+  if (array == "") {
+    return null;
+  } else {
+    for (let i = 1; i <= array.length - 1; i++) {
+      if (array[i] > maxNum) {
+        maxNum = array[i];
+      }
+    }
+    for (let j = 1; j <= array.length - 1; j++) {
+      if (array[j] < minNum) {
+        minNum = array[j];
+      }
+    }
+    console.log("max: " + maxNum + ", min: " + minNum);
+  }
 }
 
 /**
@@ -154,7 +198,20 @@ function minMax(array) {
  *
  */
 
+// function seq(num) {
+//   return [...Array(num).keys()];
+// }
+
 function seq(num) {
+  let arr = [];
+  if (num == 0) {
+    return arr;
+  } else {
+    for (let i = 0; i < num; i++) {
+      arr[i] = i;
+    }
+  }
+  return arr;
 }
 
 /**
@@ -170,6 +227,16 @@ function seq(num) {
  */
 
 function omitSeq(num) {
+  let arr = [];
+  if(num === 0 ){
+    return arr;
+  }
+  for(let i = 0; i <= num; i++){
+    if(i % 2 === 1){
+      arr.push(i);
+    }
+  }
+  return arr;
 }
 
 /**
@@ -185,6 +252,10 @@ function omitSeq(num) {
  */
 
 function filter(array, num) {
+    let result = array.filter(function(value){
+       return value <= num;
+    });
+    return result; 
 }
 
 
@@ -212,7 +283,20 @@ function filter(array, num) {
  *    ...
  */
 
-function fizzBuzz () {
+function fizzBuzz() {
+  let count = 1;
+  while (count <= 100) {
+    if (count % 5 == 0 && count % 3 == 0) {
+      console.log(count + " FizzBuzz");
+    } else if (count % 5 == 0) {
+      console.log(count + " Buzz");
+    } else if (count % 3 == 0) {
+      console.log(count + " Fizz");
+    } else {
+      console.log(count);
+    }
+    count++;
+  }
 }
 
 module.exports = {
